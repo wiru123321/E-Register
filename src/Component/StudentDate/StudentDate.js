@@ -1,4 +1,5 @@
 import React from "react";
+import "./StudentDate.css";
 
 const studentDate = (props) => {
   return (
@@ -24,7 +25,8 @@ const studentDate = (props) => {
         value={props.sId}
         onChange={props.onChange}
         placeholder="Student Id"
-        type="number"
+        type="text"
+        className={props.validateId ? "errorMsg" : ""}
         required
       />
     </div>

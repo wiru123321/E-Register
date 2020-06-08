@@ -33,7 +33,7 @@ const navbar = () => {
             <Link to="/showSubject">
               <Nav.Link href="/">Subject</Nav.Link>
             </Link>
-            <Nav.Link href="/">Pricing</Nav.Link>
+            <Nav.Link href="/">ToDo</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -32,12 +32,12 @@ class ShowSubject extends Component {
         <Navbar />
         <div>
           <div className="ShowSubject">
-            <label>Match</label>
+            <label>Maths</label>
             {this.state.students.map((student) => (
               <Subject
                 fname={student.data.studentName}
                 lname={student.data.studentSurName}
-                grade={student.data.Match}
+                grade={student.data.Math}
               />
             ))}
           </div>

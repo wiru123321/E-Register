@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Navbar from "../../Navigation/Navbar/Navbar";
-import Aux from "../../hoc/Aux";
 import "./AddStudent.css";
 import StudentData from "../../Component/StudentDate/StudentDate";
 import axios from "../../axios-student";
@@ -27,7 +26,7 @@ class AddStudent extends Component {
       studentName: this.state.firstName,
       studentSurName: this.state.lastName,
       Id: this.state.studentId,
-      Match: this.state.mathsGrade,
+      Math: this.state.mathsGrade,
       History: this.state.historyGrade,
       Biology: this.state.biologyGrade,
       English: this.state.englishGrade,
@@ -43,14 +42,19 @@ class AddStudent extends Component {
         biologyGrade: "",
         historyGrade: "",
         englishGrade: "",
+        validateId: false,
       });
     });
   };
+  validate(value) {
+    if (undefined !== value && value.length === 5) return false;
+    else return true;
+  }
   render() {
     return (
-      <Aux>
+      <div>
         <Navbar />
-        <div className="">
+        <div>
           <form onSubmit={this.dateHandler} className="AddStudent">
             <label>Personal date:</label>
             <StudentData
@@ -58,6 +62,7 @@ class AddStudent extends Component {
               lName={this.state.lastName}
               sId={this.state.studentId}
               onChange={this.handleChange}
+              validateId={this.validate(this.state.studentId)}
             />
             <label>Grades date:</label>
             <br />
@@ -71,10 +76,16 @@ class AddStudent extends Component {
               />
             </label>
             <br />
-            <button type="submit"> Add </button>
+            <button
+              type="submit"
+              disabled={this.validate(this.state.studentId)}
+            >
+              {" "}
+              Add{" "}
+            </button>
           </form>
         </div>
-      </Aux>
+      </div>
     );
   }
 }

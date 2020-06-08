@@ -3,7 +3,7 @@ import React from "react";
 const gradesDate = (props) => {
   return (
     <div>
-      <label>Match:</label>
+      <label>Math:</label>
       <input
         name="mathsGrade"
         value={props.mathsGrade}
