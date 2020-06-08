@@ -1,9 +1,4 @@
-.FullPage {
-  width: 100vw;
-  height: 95vh;
-  background-color: #a6acec;
-}
-.AddStudent {
+.Student {
   margin: 20px auto;
   width: 40%;
   text-align: center;

@@ -5,7 +5,8 @@ const mainPage = () => {
   return (
     <div>
       <Navbar />
-      hello
+      <header></header>
+      <main></main>
     </div>
   );
 };
