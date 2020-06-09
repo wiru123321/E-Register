@@ -8,7 +8,7 @@ class ShowSubject extends Component {
   state = {
     students: [],
     searchingName: "",
-    match: "",
+    math: "",
   };
 
   componentDidMount() {

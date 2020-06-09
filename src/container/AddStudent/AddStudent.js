@@ -14,11 +14,13 @@ class AddStudent extends Component {
       mathsGrade: "",
       biologyGrade: "",
       historyGrade: "",
+      show: false,
       englishGrade: "",
     },
   };
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
+    this.setState({ show: false });
   };
   dateHandler = (event) => {
     event.preventDefault();
@@ -30,6 +32,7 @@ class AddStudent extends Component {
       History: this.state.historyGrade,
       Biology: this.state.biologyGrade,
       English: this.state.englishGrade,
+      Show: this.state.show,
     };
     axios.post("/addStudent.json", { data }).then((res) => {
       console.log(res);
@@ -43,6 +46,7 @@ class AddStudent extends Component {
         historyGrade: "",
         englishGrade: "",
         validateId: false,
+        show: false,
       });
     });
   };
@@ -80,8 +84,7 @@ class AddStudent extends Component {
               type="submit"
               disabled={this.validate(this.state.studentId)}
             >
-              {" "}
-              Add{" "}
+              Add
             </button>
           </form>
         </div>

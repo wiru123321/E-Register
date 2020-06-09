@@ -7,6 +7,8 @@ import "./ShowAllStudents.css";
 class ShowAllStudents extends Component {
   state = {
     students: [],
+    show: false,
+    backgroudClicked: false,
   };
   componentDidMount() {
     axios
@@ -23,9 +25,12 @@ class ShowAllStudents extends Component {
       })
       .catch((err) => {});
   }
+  backgroudClickHandler = () => {
+    this.setState({ backgroudClicked: !this.state.backgroudClicked });
+  };
   render() {
     return (
-      <div>
+      <div onClick={this.backgroudClickHandler}>
         <div style={{ backgroundColor: "#cefff1", height: "100%" }}>
           <Navbar />
           {this.state.students.map((student) => (
@@ -34,6 +39,7 @@ class ShowAllStudents extends Component {
                 sId={student.data.Id}
                 fname={student.data.studentName}
                 lname={student.data.studentSurName}
+                bgcClicked={this.state.backgroudClicked}
               />
             </div>
           ))}

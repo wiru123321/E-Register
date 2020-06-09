@@ -8,3 +8,17 @@
   box-sizing: border-box;
   background-color: #ace7ef;
 }
+.Modal {
+  position: fixed;
+  z-index: 500;
+  background-color: #a6acec;
+  width: 20%;
+  height: 20%;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #ccc;
+  padding: 16px;
+  left: 40%;
+  top: 30%;
+  box-sizing: border-box;
+  transition: all 0.3s ease-out;
+}
